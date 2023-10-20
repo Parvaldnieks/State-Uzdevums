@@ -1,39 +1,22 @@
-import { useState } from "react";
+import Counter from "./Counter";
+import Hello from "./Hello";
 
 function App() {
+  const allNames = ["Marsels", "Railijs", "Matiss"];
 
-    const [result, setResult] = useState(0);
-    const [ratioChange, setRatioChange] = useState(1);
-
-  function Poga() {
-    setResult(result + ratioChange);
-  }
-
-  function Oga() {
-    setResult(result - ratioChange);
-  }
-
-  function handleRatioChange(event) {
-    setRatioChange(event.target.value);
-  }
+  const allNamesjsx = Names.map(name => {
+    return (
+      <Hello displayName={name} />
+    );
+  })
 
   return (
-    <div className="App">
-
-      <label>Ievadi savu textu: </label>
-      <input type="number" value={ratioChange} onChange={handleRatioChange} />
-
-      <button onClick={Poga}>+Poga</button>
-      <button onClick={Oga}>-Poga</button>
-
-      <br></br>
-      <br></br>
-
-      <h1>WOW[{result}]</h1>
-
-    </div>
+    <>
+    <Counter />
+    <Hello />
+    {allNamesjsx}
+    </>
   );
 }
-
 
 export default App;
