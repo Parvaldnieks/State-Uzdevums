@@ -1,19 +1,19 @@
 import Counter from "./Counter";
 import Hello from "./Hello";
+import Check from "./Check";
 
 function App() {
   const allNames = ["Marsels", "Railijs", "Matiss"];
 
-  const allNamesjsx = Names.map(name => {
+  const allNamesjsx = allNames.map((name, index) => {
     return (
-      <Hello displayName={name} />
+      <Hello key={index} name={name} />
     );
   })
 
   return (
     <>
     <Counter />
-    <Hello />
     {allNamesjsx}
     </>
   );

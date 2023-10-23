@@ -2,17 +2,19 @@ import { useState } from "react";
 
 function Hello(props) {
 
-    const [name, setName] = useState("");
+    const [name, setName] = useState(props.name);
 
-    function handleNameChange(event) {
+    function changeName(event) {
         setName(event.target.value);
     }
 
     return (
-        <>
-        <input type="text" value={name} onChange={handleNameChange} />
+        <div>
+
+        <input type="text" value={name} onChange={changeName} />
         <h1>Hello, {name}</h1>
-        </>
+
+        </div>
     );
 }
 
